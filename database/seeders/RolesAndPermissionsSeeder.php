@@ -45,7 +45,7 @@ class RolesAndPermissionsSeeder extends Seeder
             ['email' => 'admin@demo.com'],
             [
                 'name' => 'Administrador',
-                'password' => Hash::make('ABC123'), // 🔑 cámbiala en producción
+                'password' => Hash::make('ABC123'), 
             ]
         );
         $adminUser->assignRole($adminRole);
@@ -55,7 +55,7 @@ class RolesAndPermissionsSeeder extends Seeder
             ['email' => 'user@demo.com'],
             [
                 'name' => 'Usuario Normal',
-                'password' => Hash::make('password123'), // 🔑 cámbiala en producción
+                'password' => Hash::make('password123'),
             ]
         );
         $normalUser->assignRole($userRole);
