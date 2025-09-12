@@ -6,28 +6,49 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 20%;
+      margin: 0;
       background: #f5f7fa;
+      text-align: center;
     }
-    button {
+    header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
       background: #1e40af;
-      color: white;
-      font-size: 18px;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
+      padding: 15px 30px;
     }
-    button:hover {
-      background: #1d4ed8;
+    header a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      margin-left: 20px;
+      transition: color 0.3s;
+    }
+    header a:hover {
+      color: #93c5fd;
+    }
+    main {
+      margin-top: 15%;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>Bienvenido</h1>
-  <p>Haz clic para ir al login</p>
-  <button onclick="window.location.href='http://localhost/login'">Ir al Login</button>
+  <header>
+    <a href="http://localhost/login">Login</a>
+    <a href="http://localhost/register">Crear Usuario</a>
+  </header>
+
+  <main>
+    <h1>Bienvenido</h1>
+    <p>Selecciona una opción en la parte superior derecha</p>
+  </main>
 </body>
 </html>

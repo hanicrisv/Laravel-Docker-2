@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class RolesAndPermissionsSeeder extends Seeder
 {
@@ -29,13 +31,33 @@ class RolesAndPermissionsSeeder extends Seeder
         }
 
         // --- Crear roles ---
-        $admin = Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
-        $user  = Role::firstOrCreate(['name' => 'user', 'guard_name' => 'web']);
+        $adminRole = Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
+        $userRole  = Role::firstOrCreate(['name' => 'user', 'guard_name' => 'web']);
 
         // Asignar todos los permisos al rol admin
-        $admin->syncPermissions(Permission::all());
+        $adminRole->syncPermissions(Permission::all());
 
         // Asignar solo "ver usuarios" al rol user
-        $user->syncPermissions(['ver usuarios']);
+        $userRole->syncPermissions(['ver usuarios']);
+
+        // --- Crear usuario administrador ---
+        $adminUser = User::firstOrCreate(
+            ['email' => 'admin@demo.com'],
+            [
+                'name' => 'Administrador',
+                'password' => Hash::make('ABC123'), // 🔑 cámbiala en producción
+            ]
+        );
+        $adminUser->assignRole($adminRole);
+
+        // --- Crear usuario normal ---
+        $normalUser = User::firstOrCreate(
+            ['email' => 'user@demo.com'],
+            [
+                'name' => 'Usuario Normal',
+                'password' => Hash::make('password123'), // 🔑 cámbiala en producción
+            ]
+        );
+        $normalUser->assignRole($userRole);
     }
 }
