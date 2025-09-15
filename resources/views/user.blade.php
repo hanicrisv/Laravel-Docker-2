@@ -1,5 +1,5 @@
 @role('admin')
-    <h2>Hola, usuario 👑</h2>
+    <h2>Hola, usuario</h2>
 @endrole
 
 @can('crear usuarios')

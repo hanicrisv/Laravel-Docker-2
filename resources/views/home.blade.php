@@ -48,7 +48,6 @@
 
   <main>
     <h1>Bienvenido</h1>
-    <p>Selecciona una opción en la parte superior derecha</p>
   </main>
 </body>
 </html>
