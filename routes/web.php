@@ -22,20 +22,14 @@ Route::middleware('auth')->group(function () {
 });
 
 // Mostrar perfil de cualquier usuario
-Route::get('/profiles/{user}', [ProfileController::class, 'show'])->name('profiles.show');
+#Route::get('/profiles/{user}', [ProfileController::class, 'show'])->name('profiles.show');
 
 #Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 #Route::get('/roles', [RoleController::class, 'index']);
 
-// Rutas de roles
-Route::get('/admin', function () {
-    return view('admin') ;
-})->middleware('role:admin');
 
-
-Route::get('/user', function () {
-    return 'Área de usuario';
-})->middleware(['auth', 'role:user']);
+Route::get('/admin', [AuthController::class, 'admin'])->middleware('auth');
+Route::get('/user', [AuthController::class, 'user'])->middleware('auth');
 
 // Rutas de autenticación
 

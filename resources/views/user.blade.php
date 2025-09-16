@@ -1,7 +1,17 @@
-@role('admin')
-    <h2>Hola, usuario</h2>
-@endrole
+@extends('layouts.app')
 
-@can('crear usuarios')
-    <p>Tienes permiso de usuarios.</p>
-@endcan
+@section('content')
+<div class="max-w-2xl mx-auto p-4">
+    @if($user)
+        <h2 class="text-xl font-bold">¡Bienvenido, {{ $user->name }}!</h2>
+        <p>Email: {{ $user->email }}</p>
+
+        @if($user->hasRole('admin'))
+            <p class="text-green-600">Eres usuario.</p>
+        @endif
+
+    @else
+        <p>No hay usuario autenticado.</p>
+    @endif
+</div>
+@endsection

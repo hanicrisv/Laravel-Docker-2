@@ -12,7 +12,7 @@ class role extends Controller
 $user = Auth::user();
 
         if ($user->hasRole('admin')) {
-            return view('admin.dashboard');
+            return view('admin');
         }
 
         if ($user->can('crear usuarios')) {

@@ -92,4 +92,19 @@ class AuthController extends Controller
             'user' => $user
         ]);
     }
+    public function admin()
+    {
+    $user = Auth::user(); // obtiene el usuario autenticado
+    return view('admin', [
+        'user' => $user
+    ]);
+    }
+
+    public function user()
+    {
+    $user = Auth::user(); // obtiene el usuario autenticado
+    return view('user', [
+        'user' => $user
+    ]);
+    }
 }
