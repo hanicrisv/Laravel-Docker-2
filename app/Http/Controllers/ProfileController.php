@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,28 +13,35 @@ class ProfileController extends Controller
     /**
      * Mostrar el formulario de perfil del usuario
      */
-  public function edit(Request $request): View
-{
-    // Cambia 'edit' por 'profile.edit'
-    return view('profile.edit', [
-        'user' => $request->user(),
-    ]);
-}
+    public function edit(Request $request): View
+    {
+        if (!auth()->user()->can('editar perfil')) {
+            abort(403, 'No tienes permiso para editar el perfil.');
+        }
+
+        return view('profile.edit', [
+            'user' => $request->user(),
+        ]);
+    }
 
     /**
      * Actualizar la información del perfil del usuario.
      */
-    public function update(Request $request)
-{
-    $request->validate([
-        'name' => 'required|string|max:255',
-        'email' => 'required|email|max:255|unique:users,email,' . $request->user()->id,
-    ]);
+    public function update(Request $request): RedirectResponse
+    {
+        if (!auth()->user()->can('editar perfil')) {
+            abort(403, 'No tienes permiso para editar el perfil.');
+        }
 
-    $user = $request->user();
-    $user->update($request->only('name', 'email'));
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255|unique:users,email,' . $request->user()->id,
+        ]);
 
-    return redirect()->route('profile.edit')->with('success', 'Perfil actualizado correctamente.');
+        $user = $request->user();
+        $user->update($request->only('name', 'email'));
+
+        return redirect()->route('profile.edit')->with('success', 'Perfil actualizado correctamente.');
     }
 
     /**

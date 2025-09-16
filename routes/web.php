@@ -33,6 +33,9 @@ Route::middleware(['usuario'])->group(function () {
     });
 });
 
+Route::get('edit', [ProfileController::class, 'edit'])
+    ->middleware('can:editar perfil');
+
 
 // Rutas de autenticación
 

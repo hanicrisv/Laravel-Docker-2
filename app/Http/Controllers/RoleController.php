@@ -19,5 +19,6 @@ class RoleController  extends Controller
             return view('user.table');
         }       
         return view('user.dashboard');
+
     }    
 }
