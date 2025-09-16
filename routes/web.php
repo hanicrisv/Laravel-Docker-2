@@ -33,9 +33,6 @@ Route::middleware(['usuario'])->group(function () {
     });
 });
 
-Route::get('/profile/edit', [ProfileController::class, 'edit'])
-    ->middleware(['role:admin']); // o 'permission:edit profile'
-
 // Rutas de autenticación
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
