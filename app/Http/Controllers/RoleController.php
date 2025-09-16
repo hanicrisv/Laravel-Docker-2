@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 
-class role extends Controller
+class RoleController  extends Controller
 {
     public function index()
     {

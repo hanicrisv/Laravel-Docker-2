@@ -21,13 +21,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Mostrar perfil de cualquier usuario
-#Route::get('/profiles/{user}', [ProfileController::class, 'show'])->name('profiles.show');
-
-#Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-#Route::get('/roles', [RoleController::class, 'index']);
-
-
 Route::get('/admin', [AuthController::class, 'admin'])->middleware('auth');
 Route::get('/user', [AuthController::class, 'user'])->middleware('auth');
 

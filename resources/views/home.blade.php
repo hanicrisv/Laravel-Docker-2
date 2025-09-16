@@ -42,8 +42,8 @@
 </head>
 <body>
   <header>
-    <a href="http://localhost/login">Login</a>
-    <a href="http://localhost/register">Crear Usuario</a>
+    <a href="http://localhost:8080/login">Login</a>
+    <a href="http://localhost:8080/register">Crear Usuario</a>
   </header>
 
   <main>
