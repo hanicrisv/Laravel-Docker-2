@@ -27,9 +27,9 @@ Route::middleware(['admin'])->group(function () {
     });
 });
 
-Route::middleware(['user'])->group(function () {
-    Route::get('/user', function () {
-        return view('user');
+Route::middleware(['usuario'])->group(function () {
+    Route::get('/usuario', function () {
+        return view('usuario');
     });
 });
 

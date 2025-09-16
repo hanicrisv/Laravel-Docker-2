@@ -19,7 +19,7 @@ return Application::configure(basePath: dirname(__DIR__))
     'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
 
     'admin' => \App\Http\Middleware\EnsureUserIsAdmin::class,
-    'user' => \App\Http\Middleware\EnsureUserIsNormal::class,
+    'usuario' => \App\Http\Middleware\EnsureUserIsNormal::class,
 
     ]);   
 })

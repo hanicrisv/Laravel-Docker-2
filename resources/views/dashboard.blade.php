@@ -28,7 +28,7 @@
 <body>
      <header>
     <a href="http://localhost:8080/admin">solo para admin</a>
-     <a href="http://localhost:8080/user">solo para usuario</a>
+     <a href="http://localhost:8080/usuario">solo para usuario</a>
     
   </header>
   <main>

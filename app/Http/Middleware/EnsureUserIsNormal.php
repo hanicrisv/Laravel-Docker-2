@@ -15,7 +15,7 @@ class EnsureUserIsNormal
      */
         public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->check() && auth()->user()->hasRole('user')) {
+        if (auth()->check() && auth()->user()->hasRole('usuario')) {
             return $next($request);
         }
 

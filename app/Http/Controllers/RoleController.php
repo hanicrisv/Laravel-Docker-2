@@ -9,7 +9,7 @@ class RoleController  extends Controller
     public function index()
     {
         $user = Auth::user();
-$user = Auth::user();
+        $user = Auth::user();
 
         if ($user->hasRole('admin')) {
             return view('admin');
@@ -19,5 +19,5 @@ $user = Auth::user();
             return view('user.table');
         }       
         return view('user.dashboard');
-    }
+    }    
 }
