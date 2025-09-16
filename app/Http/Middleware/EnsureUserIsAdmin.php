@@ -19,6 +19,6 @@ class EnsureUserIsAdmin
             return $next($request);
         }
 
-        abort(403, 'Acceso denegado');
+        return redirect()->route('dashboard')->with('error', 'No tienes acceso a esta sección.');
     }
 }
