@@ -21,8 +21,18 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/admin', [AuthController::class, 'admin'])->middleware('auth');
-Route::get('/user', [AuthController::class, 'user'])->middleware('auth');
+Route::middleware(['admin'])->group(function () {
+    Route::get('/admin', function () {
+        return view('admin');
+    });
+});
+
+Route::middleware(['user'])->group(function () {
+    Route::get('/user', function () {
+        return view('user');
+    });
+});
+
 
 // Rutas de autenticación
 

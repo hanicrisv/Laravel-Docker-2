@@ -10,14 +10,16 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
-  ->withMiddleware(function (Middleware $middleware) {
-    $middleware->alias([
+  ->withMiddleware(function (Middleware $middleware) {    $middleware->alias([
     // Protege rutas para que sean accesibles por usuario con un rol específico
     'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
     // Restringe el acceso a rutas basándose en permisos específicos
     'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
     // Permite el acceso si el usuario tiene al menos uno de los roles o permisos especificados
-     'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
+    'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
+
+    'admin' => \App\Http\Middleware\EnsureUserIsAdmin::class,
+    'user' => \App\Http\Middleware\EnsureUserIsNormal::class,
 
     ]);   
 })

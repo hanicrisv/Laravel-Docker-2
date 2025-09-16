@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="max-w-2xl mx-auto p-4">
-    @if($user)
-        <h2 class="text-xl font-bold">¡Bienvenido, {{ $user->name }}!</h2>
-        <p>Email: {{ $user->email }}</p>
+    @if(auth()->check())
+        <h2 class="text-xl font-bold">¡Bienvenido, {{ auth()->user()->name }}!</h2>
+        <p>Email: {{ auth()->user()->email }}</p>
 
-        @if($user->hasRole('admin'))
+        @if(auth()->user()->hasRole('admin'))
             <p class="text-green-600">Eres usuario.</p>
         @endif
 
