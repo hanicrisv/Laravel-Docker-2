@@ -24,6 +24,7 @@ class RolesAndPermissionsSeeder extends Seeder
             'editar usuarios',
             'eliminar usuarios',
             'ver usuarios',
+            'editar perfil',
         ];
 
         foreach ($permissions as $permission) {
@@ -37,8 +38,7 @@ class RolesAndPermissionsSeeder extends Seeder
         // Asignar todos los permisos al rol admin
         $adminRole->syncPermissions(Permission::all());
 
-        $role = Role::findByName('usuario');
-        $role->revokePermissionTo('editar perfil');
+        $userRole->revokePermissionTo('editar perfil');
 
         // Asignar solo "ver usuarios" al rol user
         #$userRole->syncPermissions(['ver usuarios']);
@@ -62,5 +62,6 @@ class RolesAndPermissionsSeeder extends Seeder
             ]
         );
         $normalUser->assignRole($userRole);
+        
     }
 }

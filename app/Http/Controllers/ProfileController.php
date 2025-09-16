@@ -17,9 +17,13 @@ class ProfileController extends Controller
   public function edit(Request $request): View
 {
 
-    return view('profile.edit', [
-        'user' => $request->user(),
-    ]);
+        if (!auth()->user()->can('editar perfil')) {
+            abort(403, 'No tienes permiso para editar el perfil.');
+        }
+
+        return view('profile.edit', [
+            'user' => $request->user(),
+        ]);
 }
 
     /**
