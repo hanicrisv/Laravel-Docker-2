@@ -32,36 +32,19 @@
         <div class="glass-card rounded-2xl p-8 max-w-3xl mx-auto shadow-xl">
             <div class="flex flex-col items-center text-center">
                 <i data-feather="box" class="w-16 h-16 mb-6"></i>
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Control de Inventario Pro</h1>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Control de Inventario</h1>
                 <p class="text-xl mb-8 opacity-90">Bienvenido al sistema de gestión de inventario más completo y fácil de usar</p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md">
-                    <a href="http://localhost/login" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-medium transition-all flex items-center justify-center gap-2">
+                    <a href="http://localhost:8080/login" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-medium transition-all flex items-center justify-center gap-2">
                         <i data-feather="log-in" class="w-5 h-5"></i> Iniciar Sesión
                     </a>
-                    <a href="http://localhost/registe" class="bg-transparent hover:bg-white hover:bg-opacity-10 px-6 py-3 rounded-lg font-medium transition-all border border-white border-opacity-30 flex items-center justify-center gap-2">
+                    <a href="http://localhost:8080/registe" class="bg-transparent hover:bg-white hover:bg-opacity-10 px-6 py-3 rounded-lg font-medium transition-all border border-white border-opacity-30 flex items-center justify-center gap-2">
                         <i data-feather="user-plus" class="w-5 h-5"></i> Registrarse
                     </a>
                 </div>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                <div class="bg-white bg-opacity-10 p-6 rounded-xl">
-                    <i data-feather="database" class="w-8 h-8 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Gestión Completa</h3>
-                    <p class="opacity-80">Administra todos tus productos, categorías y existencias en un solo lugar.</p>
-                </div>
-                <div class="bg-white bg-opacity-10 p-6 rounded-xl">
-                    <i data-feather="bar-chart-2" class="w-8 h-8 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Reportes Detallados</h3>
-                    <p class="opacity-80">Genera informes y análisis de tus movimientos de inventario.</p>
-                </div>
-                <div class="bg-white bg-opacity-10 p-6 rounded-xl">
-                    <i data-feather="smartphone" class="w-8 h-8 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Acceso Móvil</h3>
-                    <p class="opacity-80">Consulta y actualiza tu inventario desde cualquier dispositivo.</p>
-                </div>
-            </div>
+                        
         </div>
     </div>
 

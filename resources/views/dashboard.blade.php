@@ -47,18 +47,15 @@
                             <i data-feather="truck" class="mr-3"></i>
                             Pedidos
                         </a>
-                        <a href="http://localhost/admin" class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 rounded-md sidebar-link">
+                        <a href="http://localhost:8080/admin" class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 rounded-md sidebar-link">
                             <i data-feather="repeat" class="mr-3"></i>
                             Configuración
                         </a>
                                               
-                        <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit" class="w-full flex items-center px-4 py-2 text-sm font-medium text-red-600 rounded-md hover:bg-red-100">
-                        <i data-feather="log-out" class="mr-3"></i>
-                        Cerrar sesión
-                    </button>
-                </form>
+                        <form action="{{ route('logout') }}" method="POST" style="margin: 0;">
+            @csrf
+            <button type="submit" class="logout">Cerrar sesión</button>
+        </form>
                     </nav>
 
                     <div class="max-w-2xl mx-auto p-4">
