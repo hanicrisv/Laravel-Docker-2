@@ -78,11 +78,7 @@
                         @else
                             <p class="text-red-600">No has iniciado sesión.</p>
                         @endif
-                    </div>
-
-                        @else
-                            <p>No hay usuario autenticado.</p>
-                        @endif
+                
                     </div>
 
                 </div>            
