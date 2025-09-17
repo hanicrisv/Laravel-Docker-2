@@ -66,17 +66,24 @@
 
                     <div class="max-w-2xl mx-auto p-4">
                         @if(auth()->check())
-        
-        <p>Email: {{ auth()->user()->email }}</p>
+                            <p>Email: {{ auth()->user()->email }}</p>
 
-        @if(auth()->user()->hasRole('admin'))
-            <p class="text-green-600">Eres administrador.</p>
-        @endif
+                        @if(auth()->user()->hasRole('admin'))
+                            <p class="text-green-600">Eres Administrador.</p>
+                        @elseif(auth()->user()->hasRole('usuario'))
+                            <p class="text-blue-600">Eres Usuario.</p>
+                        @else
+                            <p class="text-gray-600">Rol no asignado.</p>
+                        @endif
+                        @else
+                            <p class="text-red-600">No has iniciado sesión.</p>
+                        @endif
+                    </div>
 
-    @else
-        <p>No hay usuario autenticado.</p>
-    @endif
-</div>
+                        @else
+                            <p>No hay usuario autenticado.</p>
+                        @endif
+                    </div>
 
                 </div>            
             </div>
