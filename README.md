@@ -11,7 +11,20 @@
 
 **Configuración de variables de entorno**
     cp .env.example .env
-    php artisan key:generate
+
+# Base de datos
+DDB_DATABASE=laravel
+DB_USERNAME=laravel_user
+DB_PASSWORD=password
+DB_ROOT_PASSWORD=rootpassword
+
+***********
+DB_CONNECTION=mysql
+DB_HOST=mariadb
+DB_PORT=3306
+DB_DATABASE=Usuario
+DB_USERNAME=Hani
+DB_PASSWORD=
 
 **Levantar los contenedores**
 ./vendor/bin/sail up -d

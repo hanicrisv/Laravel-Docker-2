@@ -37,24 +37,21 @@
                         </a>
                         <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 rounded-md sidebar-link">
                             <i data-feather="package" class="mr-3"></i>
-                            Inventory
+                            Inventario
                         </a>
                         <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 rounded-md sidebar-link">
                             <i data-feather="file-text" class="mr-3"></i>
-                            Reports
+                            Reportes
                         </a>
                         <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 rounded-md sidebar-link">
                             <i data-feather="truck" class="mr-3"></i>
-                            Suppliers
+                            Pedidos
                         </a>
-                        <a href="//localhost/admin" class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 rounded-md sidebar-link">
+                        <a href="http://localhost/admin" class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 rounded-md sidebar-link">
                             <i data-feather="repeat" class="mr-3"></i>
-                            Transactions
+                            Configuración
                         </a>
-                        <a href="#" class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 rounded-md sidebar-link disabled">
-                            <i data-feather="settings" class="mr-3"></i>
-                            Settings
-                        </a>
+                                              
                         <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" class="w-full flex items-center px-4 py-2 text-sm font-medium text-red-600 rounded-md hover:bg-red-100">

@@ -14,7 +14,7 @@ class ProfileController extends Controller
      * Mostrar el formulario de edición de perfil (solo para admin).
      */
     public function edit(Request $request): View
-    {
+    {        
         if (!$request->user()->hasRole('admin')) {
             abort(403, 'No tienes permiso para editar el perfil.');
         }

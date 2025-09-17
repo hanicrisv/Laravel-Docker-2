@@ -38,7 +38,7 @@ class RolesAndPermissionsSeeder extends Seeder
         // Asignar todos los permisos al rol admin
         $adminRole->syncPermissions(Permission::all());
 
-        $userRole->revokePermissionTo('editar perfil');
+        #$userRole->revokePermissionTo('editar perfil');
 
         // Asignar solo "ver usuarios" al rol user
         #$userRole->syncPermissions(['ver usuarios']);

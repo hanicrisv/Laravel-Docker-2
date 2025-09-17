@@ -1,53 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Página Principal</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f7fa;
-      text-align: center;
-    }
-    header {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      background: #1e40af;
-      padding: 15px 30px;
-    }
-    header a {
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      margin-left: 20px;
-      transition: color 0.3s;
-    }
-    header a:hover {
-      color: #93c5fd;
-    }
-    main {
-      margin-top: 15%;
-    }
-    h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario | Bienvenido</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <style>
+        .vanta-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <a href="http://localhost/login">Login</a>
-    <a href="http://localhost/register">Crear Usuario</a>
-  </header>
+<body class="min-h-screen flex items-center justify-center text-white">
+    <div id="vanta-bg" class="vanta-bg"></div>
+    
+    <div class="container mx-auto px-4" data-aos="fade-up">
+        <div class="glass-card rounded-2xl p-8 max-w-3xl mx-auto shadow-xl">
+            <div class="flex flex-col items-center text-center">
+                <i data-feather="box" class="w-16 h-16 mb-6"></i>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Control de Inventario Pro</h1>
+                <p class="text-xl mb-8 opacity-90">Bienvenido al sistema de gestión de inventario más completo y fácil de usar</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md">
+                    <a href="http://localhost/login" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-medium transition-all flex items-center justify-center gap-2">
+                        <i data-feather="log-in" class="w-5 h-5"></i> Iniciar Sesión
+                    </a>
+                    <a href="http://localhost/registe" class="bg-transparent hover:bg-white hover:bg-opacity-10 px-6 py-3 rounded-lg font-medium transition-all border border-white border-opacity-30 flex items-center justify-center gap-2">
+                        <i data-feather="user-plus" class="w-5 h-5"></i> Registrarse
+                    </a>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                <div class="bg-white bg-opacity-10 p-6 rounded-xl">
+                    <i data-feather="database" class="w-8 h-8 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Gestión Completa</h3>
+                    <p class="opacity-80">Administra todos tus productos, categorías y existencias en un solo lugar.</p>
+                </div>
+                <div class="bg-white bg-opacity-10 p-6 rounded-xl">
+                    <i data-feather="bar-chart-2" class="w-8 h-8 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Reportes Detallados</h3>
+                    <p class="opacity-80">Genera informes y análisis de tus movimientos de inventario.</p>
+                </div>
+                <div class="bg-white bg-opacity-10 p-6 rounded-xl">
+                    <i data-feather="smartphone" class="w-8 h-8 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Acceso Móvil</h3>
+                    <p class="opacity-80">Consulta y actualiza tu inventario desde cualquier dispositivo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <main>
-    <h1>Bienvenido</h1>
-  </main>
+    <script>
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3a86ff,
+            backgroundColor: 0x111827,
+            points: 10.00,
+            maxDistance: 22.00,
+            spacing: 18.00
+        });
+        
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out'
+        });
+        
+        feather.replace();
+        
+        // Smooth hover effects for cards
+        document.querySelectorAll('.bg-white\\/10').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('bg-opacity-20');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('bg-opacity-20');
+            });
+        });
+    </script>
 </body>
 </html>
